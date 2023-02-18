@@ -1,10 +1,17 @@
 package org.qmacias.products.service.rest;
 
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
 final class ProductsController {
+
+    private final Environment env;
+
+    ProductsController(final Environment env) {
+        this.env = env;
+    }
 
     @PostMapping
     public String createProduct() {
@@ -13,7 +20,8 @@ final class ProductsController {
 
     @GetMapping
     public String getProduct() {
-        return "HTTP GET Handled";
+        return "HTTP GET Handled at port "
+                + env.getProperty("local.server.port");
     }
 
     @PutMapping
