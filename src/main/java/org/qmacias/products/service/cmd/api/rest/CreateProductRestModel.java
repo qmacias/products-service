@@ -1,4 +1,4 @@
-package org.qmacias.products.service.rest.model;
+package org.qmacias.products.service.cmd.api.rest;
 
 import lombok.Data;
 

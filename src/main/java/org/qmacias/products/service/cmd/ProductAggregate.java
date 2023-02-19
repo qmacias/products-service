@@ -1,11 +1,11 @@
-package org.qmacias.products.service.domain;
+package org.qmacias.products.service.cmd;
 
-import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.qmacias.products.service.core.event.ProductCreatedEvent;
-import org.qmacias.products.service.application.cmd.CreateProductCommand;
+import org.qmacias.products.service.cmd.application.CreateProductCommand;
 
 import org.axonframework.spring.stereotype.Aggregate;
 import org.axonframework.commandhandling.CommandHandler;
+import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.modelling.command.AggregateIdentifier;
 

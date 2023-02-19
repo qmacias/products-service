@@ -1,4 +1,4 @@
-package org.qmacias.products.service.application.cmd;
+package org.qmacias.products.service.cmd.application;
 
 import lombok.Data;
 import lombok.Builder;

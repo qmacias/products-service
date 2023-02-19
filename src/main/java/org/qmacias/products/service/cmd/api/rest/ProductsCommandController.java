@@ -1,8 +1,7 @@
-package org.qmacias.products.service.rest;
+package org.qmacias.products.service.cmd.api.rest;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
-import org.qmacias.products.service.application.cmd.CreateProductCommand;
-import org.qmacias.products.service.rest.model.CreateProductRestModel;
+import org.qmacias.products.service.cmd.application.CreateProductCommand;
 
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +10,13 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/products")
-final class ProductsController {
+final class ProductsCommandController {
 
     final Environment env;
 
     final CommandGateway commandGateway;
 
-    ProductsController(final Environment env, final CommandGateway commandGateway) {
+    ProductsCommandController(final Environment env, final CommandGateway commandGateway) {
         this.env = env;
         this.commandGateway = commandGateway;
     }

@@ -1,4 +1,4 @@
-package org.qmacias.products.service.application.event;
+package org.qmacias.products.service.query;
 
 import org.qmacias.products.service.core.data.ProductEntity;
 import org.qmacias.products.service.core.data.ProductRepository;
