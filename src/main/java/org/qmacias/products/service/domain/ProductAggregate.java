@@ -26,7 +26,7 @@ public class ProductAggregate {
 
     private BigInteger quantity;
 
-    protected ProductAggregate() {
+    public ProductAggregate() {
     }
 
     @CommandHandler
