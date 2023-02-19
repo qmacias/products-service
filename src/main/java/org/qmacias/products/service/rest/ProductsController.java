@@ -1,5 +1,6 @@
 package org.qmacias.products.service.rest;
 
+import org.qmacias.products.service.rest.model.CreateProductRestModel;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +15,8 @@ final class ProductsController {
     }
 
     @PostMapping
-    public String createProduct() {
-        return "HTTP POST Handled";
+    public String createProduct(@RequestBody final CreateProductRestModel createProductRestModel) {
+        return "HTTP POST Handled " + createProductRestModel.getTitle();
     }
 
     @GetMapping
