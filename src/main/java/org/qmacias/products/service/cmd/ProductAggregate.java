@@ -33,7 +33,7 @@ public class ProductAggregate {
     public ProductAggregate(final CreateProductCommand createProductCommand) {
         // Validate Create Product Command here
         if (createProductCommand.getTitle() == null || createProductCommand.getTitle().isBlank()) {
-            throw new IllegalArgumentException("Title cannot br empty");
+            throw new IllegalArgumentException("Title cannot be empty");
         }
 
         if (createProductCommand.getPrice().compareTo(BigDecimal.ZERO) <= 0) {

@@ -12,7 +12,7 @@ import java.math.BigInteger;
 @Data
 public class CreateProductRestModel {
 
-    @NotBlank(message = "Product title is a required field.")
+//    @NotBlank(message = "Product title is a required field.")
     private String title;
 
     @Min(value = 1, message = "Price cannot be lower than 1.")
