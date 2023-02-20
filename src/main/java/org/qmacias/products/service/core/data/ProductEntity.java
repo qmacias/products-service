@@ -1,4 +1,4 @@
-package org.qmacias.products.service.core.data.main;
+package org.qmacias.products.service.core.data;
 
 import lombok.Data;
 

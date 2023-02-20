@@ -3,8 +3,8 @@ package org.qmacias.products.service.cmd;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 
-import org.qmacias.products.service.core.data.ProductLookupEntity;
-import org.qmacias.products.service.core.data.ProductLookupRepository;
+import org.qmacias.products.service.core.data.lookup.ProductLookupEntity;
+import org.qmacias.products.service.core.data.lookup.ProductLookupRepository;
 import org.qmacias.products.service.core.event.ProductCreatedEvent;
 
 import org.springframework.stereotype.Component;

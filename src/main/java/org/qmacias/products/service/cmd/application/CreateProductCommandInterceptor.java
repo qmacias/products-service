@@ -3,8 +3,8 @@ package org.qmacias.products.service.cmd.application;
 import org.axonframework.commandhandling.CommandMessage;
 import org.axonframework.messaging.MessageDispatchInterceptor;
 
-import org.qmacias.products.service.core.data.ProductLookupEntity;
-import org.qmacias.products.service.core.data.ProductLookupRepository;
+import org.qmacias.products.service.core.data.lookup.ProductLookupEntity;
+import org.qmacias.products.service.core.data.lookup.ProductLookupRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +41,7 @@ public class CreateProductCommandInterceptor implements MessageDispatchIntercept
                         .findByTitle(createProductCommand.getTitle());
 
                 if (!(productLookupEntity == null)) {
-                    throw new IllegalArgumentException(String.format(
+                    throw new IllegalStateException(String.format(
                             "Product with title %s already exist.", createProductCommand.getTitle()
                     ));
                 }

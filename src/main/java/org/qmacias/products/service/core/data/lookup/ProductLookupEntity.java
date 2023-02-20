@@ -1,4 +1,4 @@
-package org.qmacias.products.service.core.data;
+package org.qmacias.products.service.core.data.lookup;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

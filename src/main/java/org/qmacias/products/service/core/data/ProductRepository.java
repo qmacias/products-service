@@ -1,5 +1,6 @@
-package org.qmacias.products.service.core.data.main;
+package org.qmacias.products.service.core.data;
 
+import org.qmacias.products.service.core.data.ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<ProductEntity, String> {
