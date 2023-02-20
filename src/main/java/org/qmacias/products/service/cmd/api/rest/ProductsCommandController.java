@@ -23,8 +23,8 @@ final class ProductsCommandController {
     @PostMapping
     public String createProduct(@Valid @RequestBody final CreateProductRestModel createProductRestModel) {
         CreateProductCommand createProductCommand = CreateProductCommand.builder()
-                .price(createProductRestModel.getPrice())
                 .title(createProductRestModel.getTitle())
+                .price(createProductRestModel.getPrice())
                 .quantity(createProductRestModel.getQuantity())
                 .productId(UUID.randomUUID().toString()).build();
 

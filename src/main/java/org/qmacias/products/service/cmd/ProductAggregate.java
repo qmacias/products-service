@@ -32,12 +32,12 @@ public class ProductAggregate {
     @CommandHandler
     public ProductAggregate(final CreateProductCommand createProductCommand) {
         // Validate Create Product Command here
-        if (createProductCommand.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("Product cannot be less or equal to zero");
-        }
-
         if (createProductCommand.getTitle() == null || createProductCommand.getTitle().isBlank()) {
             throw new IllegalArgumentException("Title cannot br empty");
+        }
+
+        if (createProductCommand.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("Product cannot be less or equal to zero");
         }
 
         ProductCreatedEvent productCreatedEvent = new ProductCreatedEvent();
@@ -50,8 +50,8 @@ public class ProductAggregate {
     @EventSourcingHandler
     public void on(final ProductCreatedEvent productCreatedEvent) {
         this.productId = productCreatedEvent.getProductId();
-        this.price = productCreatedEvent.getPrice();
         this.title = productCreatedEvent.getTitle();
+        this.price = productCreatedEvent.getPrice();
         this.quantity = productCreatedEvent.getQuantity();
     }
 
