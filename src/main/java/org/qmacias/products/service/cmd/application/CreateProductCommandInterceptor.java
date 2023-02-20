@@ -5,13 +5,14 @@ import org.axonframework.messaging.MessageDispatchInterceptor;
 
 import org.qmacias.products.service.core.data.ProductLookupEntity;
 import org.qmacias.products.service.core.data.ProductLookupRepository;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Nonnull;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.function.BiFunction;
 
@@ -36,14 +37,12 @@ public class CreateProductCommandInterceptor implements MessageDispatchIntercept
             if (CreateProductCommand.class.equals(command.getPayloadType())) {
                 CreateProductCommand createProductCommand = (CreateProductCommand) command.getPayload();
 
-                ProductLookupEntity productLookupEntity = productLookupRepository.findByProductIdOrTitle(
-                        createProductCommand.getProductId(), createProductCommand.getTitle()
-                );
+                ProductLookupEntity productLookupEntity = productLookupRepository
+                        .findByTitle(createProductCommand.getTitle());
 
                 if (!(productLookupEntity == null)) {
                     throw new IllegalArgumentException(String.format(
-                            "Product with productId %s or title %s already exist.",
-                            createProductCommand.getProductId(), createProductCommand.getTitle()
+                            "Product with title %s already exist.", createProductCommand.getTitle()
                     ));
                 }
             }
