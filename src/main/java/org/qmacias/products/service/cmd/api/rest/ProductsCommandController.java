@@ -4,23 +4,19 @@ import org.axonframework.commandhandling.gateway.CommandGateway;
 
 import org.qmacias.products.service.cmd.application.CreateProductCommand;
 
-import org.springframework.core.env.Environment;
-
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/products")
 final class ProductsCommandController {
 
-    final Environment env;
-
     final CommandGateway commandGateway;
 
-    ProductsCommandController(final Environment env, final CommandGateway commandGateway) {
-        this.env = env;
+    ProductsCommandController(final CommandGateway commandGateway) {
         this.commandGateway = commandGateway;
     }
 
