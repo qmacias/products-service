@@ -20,14 +20,15 @@ public class ProductEventsHandler {
         this.productRepository = productRepository;
     }
 
-//    @ExceptionHandler()
-//    public void handle(Exception exception) throws Exception {
-//        throw exception;
-//    }
-//
-//    @ExceptionHandler(resultType = IllegalArgumentException.class)
-//    public void handle(IllegalArgumentException exception) {
-//    }
+    @ExceptionHandler()
+    public void handle(Exception exception) throws Exception {
+        throw exception;
+    }
+
+    @ExceptionHandler(resultType = IllegalArgumentException.class)
+    public void handle(IllegalArgumentException exception) {
+        // TODO: Log error message
+    }
 
     @EventHandler
     public void on(final ProductCreatedEvent event) throws Exception {
@@ -40,7 +41,7 @@ public class ProductEventsHandler {
             e.printStackTrace();
         }
 
-//        if (true) throw new Exception("Forcing exception in the Event Handler class.");
+//        throw new Exception("Forcing exception in the Event Handler class.");
     }
 
 }
