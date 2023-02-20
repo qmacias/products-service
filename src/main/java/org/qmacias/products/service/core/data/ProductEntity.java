@@ -2,10 +2,8 @@ package org.qmacias.products.service.core.data;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -17,7 +15,6 @@ public class ProductEntity implements java.io.Serializable {
     private static final long serialVersionUID = -8556192033846189435L;
 
     @Id
-    @Column(unique = true)
     private String productId;
 
     @Column(unique = true)

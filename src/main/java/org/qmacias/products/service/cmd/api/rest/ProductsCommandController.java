@@ -1,9 +1,11 @@
 package org.qmacias.products.service.cmd.api.rest;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
+
 import org.qmacias.products.service.cmd.application.CreateProductCommand;
 
 import org.springframework.core.env.Environment;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -23,7 +25,6 @@ final class ProductsCommandController {
 
     @PostMapping
     public String createProduct(@RequestBody final CreateProductRestModel createProductRestModel) {
-
         CreateProductCommand createProductCommand = CreateProductCommand.builder()
                 .price(createProductRestModel.getPrice())
                 .title(createProductRestModel.getTitle())
@@ -39,22 +40,6 @@ final class ProductsCommandController {
         }
 
         return returnedValue;
-    }
-
-    @GetMapping
-    public String getProduct() {
-        return "HTTP GET Handled at port "
-                + env.getProperty("local.server.port");
-    }
-
-    @PutMapping
-    public String updateProduct() {
-        return "HTTP PUT Handled";
-    }
-
-    @DeleteMapping
-    public String deleteProduct() {
-        return "HTTP DELETE Handled";
     }
 
 }
