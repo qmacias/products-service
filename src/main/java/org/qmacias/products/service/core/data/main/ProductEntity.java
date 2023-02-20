@@ -1,4 +1,4 @@
-package org.qmacias.products.service.core.data;
+package org.qmacias.products.service.core.data.main;
 
 import lombok.Data;
 
@@ -15,7 +15,6 @@ public class ProductEntity implements java.io.Serializable {
     private static final long serialVersionUID = -8556192033846189435L;
 
     @Id
-    @Column(unique = true)
     private String productId;
 
     @Column(unique = true)
